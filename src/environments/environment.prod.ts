@@ -1,12 +1,12 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyDuzRFuq6DyrVEvgtB9CzwZYcgZAgIppbE",
-    authDomain: "tc-organic-market.firebaseapp.com",
-    databaseURL: "https://tc-organic-market.firebaseio.com",
-    projectId: "tc-organic-market",
-    storageBucket: "tc-organic-market.appspot.com",
-    messagingSenderId: "195115099940",
-    appId: "1:195115099940:web:b5c137d6933a03224bf5b1"
+    apiKey: "AIzaSyBHrVf1QcM_aujuvl4OsAZG6VMeo53IX7k",
+    authDomain: "organic-mkt.firebaseapp.com",
+    databaseURL: "https://organic-mkt.firebaseio.com",
+    projectId: "organic-mkt",
+    storageBucket: "organic-mkt.appspot.com",
+    messagingSenderId: "825872266652",
+    appId: "1:825872266652:web:0d4895cb5ee1a156e54459"
   }
 };
