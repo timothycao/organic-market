@@ -21,21 +21,16 @@ export class ProductFormComponent implements OnInit {
     imageUrl: null
   };
   id;
-  placeholder = {
-    title: 'Title',
-    price: 'Price',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/LACMTA_Square_Silver_Line.svg/1024px-LACMTA_Square_Silver_Line.svg.png'
-  }
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private categoryService: CategoryService,
     private productService: ProductService) {
-    this.categories$ = categoryService.getCategories();
+    this.categories$ = categoryService.getAll();
 
     this.id = this.route.snapshot.paramMap.get('id');
-    if (this.id) this.productService.get(this.id).valueChanges().pipe(take(1)).subscribe((p: Product) => this.product = p);
+    if (this.id) this.productService.get(this.id).valueChanges().pipe(take(1)).subscribe(p => this.product = p);
   }
 
   save(product) {
