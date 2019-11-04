@@ -15,6 +15,7 @@ export class ProductFormComponent implements OnInit {
 
   categories$;
   product: Product = {
+    key: null,
     title: null,
     price: null,
     category: null,
