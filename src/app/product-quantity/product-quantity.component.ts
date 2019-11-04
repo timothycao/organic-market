@@ -5,20 +5,23 @@ import { ShoppingCart } from '../models/shopping-cart';
 import { ShoppingCartService } from '../shopping-cart.service';
 
 @Component({
-  selector: 'product-card',
-  templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.css']
+  selector: 'product-quantity',
+  templateUrl: './product-quantity.component.html',
+  styleUrls: ['./product-quantity.component.css']
 })
-export class ProductCardComponent {
+export class ProductQuantityComponent {
 
-  @Input('product') product: Product;
-  @Input('show-actions') showActions = true;
+  @Input ('product') product: Product;
   @Input('shopping-cart') shoppingCart: ShoppingCart;
 
   constructor(private shoppingCartService: ShoppingCartService) { }
 
   addToCart() {
     this.shoppingCartService.addToCart(this.product);
+  }
+
+  removeFromCart() {
+    this.shoppingCartService.removeFromCart(this.product);
   }
 
 }
