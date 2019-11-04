@@ -81,7 +81,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     AdminAuthGuard,
     UserService,
     CategoryService,
-    ProductService
+    ProductService,
+    ShoppingCartComponent
   ],
   bootstrap: [AppComponent]
 })

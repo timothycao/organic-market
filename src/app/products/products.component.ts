@@ -1,22 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { ProductService } from '../product.service';
 import { Product } from '../models/product';
+import { ShoppingCartService } from '../shopping-cart.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit, OnDestroy {
 
   products: Product[] = [];
   filteredProducts: Product[] = [];
   category: string;
+  cart: any;
+  subcription: Subscription;
 
-  constructor(route: ActivatedRoute, productService: ProductService) {
-
+  constructor(
+    route: ActivatedRoute,
+    productService: ProductService,
+    private shoppingCartService: ShoppingCartService) {
     productService.getAll().subscribe(products => {
       this.products = products;
 
@@ -29,6 +35,14 @@ export class ProductsComponent {
       })
 
     })
+  }
+
+  async ngOnInit() {
+    this.subcription = (await this.shoppingCartService.getCart()).subscribe(cart => this.cart = cart);
+  }
+
+  ngOnDestroy() {
+    this.subcription.unsubscribe();
   }
 
 }
