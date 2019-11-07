@@ -1,12 +1,18 @@
+.btn-light {
+  border-color: #e7e7e7;
+}
+
 .thumbnail {
-  width: 80px;
-  height: 80px;
+  width: 8vw;
+  max-width: 80px;
+  height: 8vw;
+  max-height: 80px;
   border-radius: 100%;
   background-size: cover;
 }
 
 .image {
-  width: 80px;
+  width: 8vw;
 }
 
 .product {
@@ -14,9 +20,9 @@
 }
 
 .quantity {
-  width: 230px;
+  width: 20vw;
 }
 
 .price {
-  width: 100px;
+  width: 10vw;
 }

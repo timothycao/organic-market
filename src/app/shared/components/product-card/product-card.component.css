@@ -1,7 +1,13 @@
 .card {
   margin-bottom: 30px;
+  border-radius: 0;
+}
+
+.card-img-top {
+  padding: 0.5vw;
 }
 
 .card-footer {
-  padding: 0;
+  padding: 0.5vw;
+  background-color: white;
 }

@@ -13,12 +13,14 @@ import { ShoppingCart } from 'shared/models/shopping-cart';
 })
 export class BootstrapNavbarComponent implements OnInit {
 
+  isCollapsed: boolean;
   appUser: AppUser;
   cart$: Observable<ShoppingCart>;
 
   constructor(private auth: AuthService, private shoppingCartService: ShoppingCartService) { }
 
   async ngOnInit() {
+    this.isCollapsed = true;
     this.auth.appUser$.subscribe(appUser => this.appUser = appUser);
     this.cart$ = await this.shoppingCartService.getCart();
   }
