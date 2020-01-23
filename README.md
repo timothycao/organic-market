@@ -1,4 +1,11 @@
-# OrganicMarket
+# Organic Market
+
+Welcome to Organic Market, an e-commerce site for organic groceries, built using Angular, Boostrap, and Firebase Realtime Database.
+
+**Deployed at:**
+```
+https://organic-mkt.firebaseapp.com
+```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.16.
 
